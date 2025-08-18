@@ -1,0 +1,23 @@
+# Godot
+.import/
+.godot/
+/android/
+# Godot mono/C# (build artifacts)
+.mono/
+bin/
+obj/
+
+# Godot temporary files
+*.tmp
+
+# IDE/editor
+.vs/
+.idea/
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# OS
+.DS_Store
+Thumbs.db
