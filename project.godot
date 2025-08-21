@@ -11,9 +11,16 @@ config_version=5
 [application]
 
 config/name="Snake"
+run/main_scene="uid://bxd5lxdpp7hgw"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="Snake"
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Food"
+2d_physics/layer_3="Walls"
