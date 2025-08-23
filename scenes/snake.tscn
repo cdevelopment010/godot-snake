@@ -19,6 +19,9 @@ position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_tnb1o")
 
 [node name="MoveTimer" type="Timer" parent="."]
+wait_time = 0.25
 autostart = true
+
+[node name="Bodies" type="Node" parent="."]
 
 [connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]

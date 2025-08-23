@@ -22,8 +22,6 @@ func game_over():
 	#$Food.add_child(food)
 
 
-func _on_left_body_entered(_bodybody: Node2D) -> void:
-	pass # Replace with function body.
 
 
 func _on_snake_gameover_signal() -> void:
