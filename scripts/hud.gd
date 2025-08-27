@@ -1,22 +1,35 @@
 extends CanvasLayer
 
+@onready var restart: Button = %Restart
+@onready var main_menu: Button = %"Main Menu"
+@onready var message: Label = $VBoxContainer/Message
+
+
 func update_score(score):
 	$Score.text = str(score)
 
 
 func show_message(text):
-	$Message.text = text
-	$Message.show()
+	message.text = text
+	message.show()
 	
 func show_game_over():
-	$Button.show()
+	restart.show()
+	main_menu.show()
 	show_message("Game Over")
 	
-
+func _reset() -> void:
+	update_score(0)
+	message.text = ""
+	message.hide()
+	restart.hide()
+	main_menu.hide()
 
 func _on_button_pressed() -> void:
-	update_score(0)
-	$Message.text = ""
-	$Message.hide()
-	$Button.hide()
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	_reset()
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
+
+
+func _on_main_menu_pressed() -> void:
+	_reset()
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

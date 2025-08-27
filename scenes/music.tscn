@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdq4xa4scudrb"]
+
+[ext_resource type="AudioStream" uid="uid://cdwsyp3f2qm1m" path="res://assets/Audio/Zakiro/6. Dancing Robot.wav" id="1_05ggv"]
+[ext_resource type="Script" uid="uid://jnrybgj86yac" path="res://scripts/music.gd" id="2_ibx2e"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_05ggv")
+autoplay = true
+bus = &"Music"
+script = ExtResource("2_ibx2e")

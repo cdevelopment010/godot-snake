@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Snake"
-run/main_scene="uid://bxd5lxdpp7hgw"
+run/main_scene="uid://bvmyhxkrwffdm"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scripts/gloabl.gd"
+Music="*res://scenes/music.tscn"
 
 [dotnet]
 
