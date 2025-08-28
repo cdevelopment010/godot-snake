@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvmyhxkrwffdm"]
+[gd_scene load_steps=3 format=3 uid="uid://bvmyhxkrwffdm"]
 
 [ext_resource type="Script" uid="uid://cs0nemup3kqri" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="AudioStream" uid="uid://gy4m85hbutmx" path="res://assets/Audio/RETROBIT Vol 1/select1.wav" id="2_ekxnf"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -46,32 +47,20 @@ theme_override_constants/separation = 16
 layout_mode = 2
 text = "Play"
 
-[node name="BackgroundMusicSetting" type="HBoxContainer" parent="MenuItemContainer"]
+[node name="CheckMusicButton" type="CheckButton" parent="MenuItemContainer"]
 layout_mode = 2
-
-[node name="Music" type="Label" parent="MenuItemContainer/BackgroundMusicSetting"]
-layout_mode = 2
-size_flags_horizontal = 3
+button_pressed = true
 text = "Background Music"
 
-[node name="CheckMusicButton" type="CheckButton" parent="MenuItemContainer/BackgroundMusicSetting"]
+[node name="CheckFoodMusicButton" type="CheckButton" parent="MenuItemContainer"]
 layout_mode = 2
 button_pressed = true
-
-[node name="FoodMusicSetting" type="HBoxContainer" parent="MenuItemContainer"]
-layout_mode = 2
-
-[node name="Food" type="Label" parent="MenuItemContainer/FoodMusicSetting"]
-layout_mode = 2
-size_flags_horizontal = 3
 text = "Food Music"
-vertical_alignment = 1
 
-[node name="CheckFoodMusicButton" type="CheckButton" parent="MenuItemContainer/FoodMusicSetting"]
-layout_mode = 2
-disabled = true
-button_pressed = true
+[node name="SelectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ekxnf")
+bus = &"SFX"
 
 [connection signal="pressed" from="MenuItemContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="toggled" from="MenuItemContainer/BackgroundMusicSetting/CheckMusicButton" to="." method="_on_check_music_button_toggled"]
-[connection signal="toggled" from="MenuItemContainer/FoodMusicSetting/CheckFoodMusicButton" to="." method="_on_check_food_music_button_toggled"]
+[connection signal="toggled" from="MenuItemContainer/CheckMusicButton" to="." method="_on_check_music_button_toggled"]
+[connection signal="toggled" from="MenuItemContainer/CheckFoodMusicButton" to="." method="_on_check_food_music_button_toggled"]

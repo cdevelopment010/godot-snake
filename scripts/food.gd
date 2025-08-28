@@ -12,6 +12,8 @@ func _ready() -> void:
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	food_signal.emit()
+	if Global.play_sfx:
+		$FoodSound.play()
 	randomize_food_position()
 
 func randomize_food_position() -> void:
