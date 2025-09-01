@@ -20,8 +20,6 @@ normal = Vector2(0, 1)
 script = ExtResource("1_lbhrr")
 food_scene = ExtResource("2_iywne")
 
-[node name="HUD" parent="." instance=ExtResource("3_p57ef")]
-
 [node name="FoodTimer" type="Timer" parent="."]
 wait_time = 1.3
 autostart = true
@@ -61,6 +59,8 @@ shape = SubResource("WorldBoundaryShape2D_o6xl0")
 [node name="Food" parent="Food" instance=ExtResource("2_iywne")]
 
 [node name="Snake" parent="." instance=ExtResource("4_u5sy4")]
+
+[node name="HUD" parent="." instance=ExtResource("3_p57ef")]
 
 [connection signal="increase_speed_multiplier" from="." to="Snake" method="_on_main_increase_speed_multiplier"]
 [connection signal="timeout" from="FoodTimer" to="." method="_on_food_timer_timeout"]
